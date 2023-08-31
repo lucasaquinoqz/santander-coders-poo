@@ -8,7 +8,7 @@ class Catalogo {
             <div class="item" id="item${val.id}">
                 <div class="img">
                     <div class="remover">
-                        <button id="remover" onclick='Catalogo.remover(${val.id})'>Remover</button>
+                        <button id="remover" class="btn-remover" onclick='Catalogo.remover(${val.id})'><img src="src/x_106506.png" alt="img-remover"></button>
                     </div>
                 </div>
                 <div class="descricao-geral">
