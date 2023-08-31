@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header .logo {
+    display: flex;
+    justify-content: center;
+    font-family: 'Luxurious Script', cursive;
+    font-size: 70px;
+    padding: 20px 0px;
+    
+}
+
+header nav {
+    font-family: 'Mohave', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: rgb(67, 67, 67);
+    transition: .5s;
+}
+
+header nav a:hover {
+    color: black;
+    text-shadow: #7d7d7d 1px 1px 5px;
+}
+
+main .conteiner {
+    margin: 0px auto;
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+
+.item {
+    margin: auto;
+    align-items: center;
+    width: 250px;
+    height: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: .5s;
+}
+
+.item:hover {
+    scale: 1.05;
+}
+
+.item .img {
+    background-color: #BEBEBE;
+    width: 250px;
+    height: 200px;
+}
+
+.item .descricao-geral {
+    background-color: #909090;
+    width: 250px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
