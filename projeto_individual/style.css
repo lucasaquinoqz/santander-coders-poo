@@ -52,7 +52,7 @@ main .conteiner {
 .remover .btn-remover {
     background-color: transparent;
     border: none;
-    padding: 5px;
+    padding: 10px 5px;
 }
 
 .remover .btn-remover img {
