@@ -5,7 +5,6 @@ class Catalogo {
     #preco = document.querySelector('#preco')
     #quantidade = document.querySelector('#quantidade')
     #tipo = document.querySelector('#tipo')
-    #imagem = document.querySelector('#imagem')
 
     constructor() { }
     static imprimir() {
@@ -39,8 +38,6 @@ class Catalogo {
     }
 
     static init() {
-        // this.nome = document.querySelector('#nome')
-        // this.preco = document.querySelector('#preco')
         this.cadastra = document.querySelector('#cadastra')
         this.cadastra.addEventListener('click', function () {
             Catalogo.adicionar(nome.value, preco.value, quantidade.value, tipo.value)
@@ -85,27 +82,38 @@ class Catalogo {
             case "vinho":
                 imagem = "src/vinho.png"
                 produtos.push(new Vinho(nome, preco, quantidade, imagem))
+                Catalogo.limparCampos()
                 break;
 
             case "cachaça":
                 imagem = "src/cachaca.png"
                 produtos.push(new Cachaca(nome, preco, quantidade, imagem))
+                Catalogo.limparCampos()
                 break;
 
             case "vodka":
                 imagem = "src/vodka.png"
                 produtos.push(new Vodka(nome, preco, quantidade, imagem))
+                Catalogo.limparCampos()
                 break;
 
             case "cerveja":
                 imagem = "src/cerveja.png"
                 produtos.push(new Cerveja(nome, preco, quantidade, imagem))
+                Catalogo.limparCampos()
                 break;
 
             default:
                 break;
         }
         Catalogo.imprimir()
+    }
+
+    static limparCampos() {
+        nome.value = ""
+        preco.value = ""
+        quantidade.value = ""
+        tipo.value = ""
     }
 
     static remover(indice) {
@@ -118,6 +126,7 @@ class Catalogo {
         produtos[index].nome = novoNome.value
         produtos[index].preco = novoPreco.value
         produtos[index].quantidade = novaQuantidade.value
+        Catalogo.limparCampos()
         Catalogo.imprimir()
     }
 
@@ -151,12 +160,9 @@ class Catalogo {
     }
 }
 
-
-let id = 1
-
 class Bebida {
+    static id = 1
     constructor(nome, preco, quantidade, imagem) {
-        this.id = id++
         this.nome = nome
         this.preco = preco
         this.quantidade = quantidade
@@ -173,7 +179,7 @@ class Bebida {
 class Vinho extends Bebida {
     constructor(nome, preco, quantidade, imagem) {
         super(nome, preco, quantidade, imagem)
-        this.id = id++
+        this.id = Bebida.id++
     }
 
     armazenamentoCaixa() {
@@ -185,7 +191,7 @@ class Vinho extends Bebida {
 class Cachaca extends Bebida {
     constructor(nome, preco, quantidade, imagem) {
         super(nome, preco, quantidade, imagem)
-        this.id = id++
+        this.id = Bebida.id++
     }
 
     armazenamentoCaixa() {
@@ -197,7 +203,7 @@ class Cachaca extends Bebida {
 class Vodka extends Bebida {
     constructor(nome, preco, quantidade, imagem) {
         super(nome, preco, quantidade, imagem)
-        this.id = id++
+        this.id = Bebida.id++
     }
 
     armazenamentoCaixa() {
@@ -209,7 +215,7 @@ class Vodka extends Bebida {
 class Cerveja extends Bebida {
     constructor(nome, preco, quantidade, imagem) {
         super(nome, preco, quantidade, imagem)
-        this.id = id++
+        this.id = Bebida.id++
     }
 
     armazenamentoCaixa() {
@@ -218,19 +224,10 @@ class Cerveja extends Bebida {
     }
 }
 
-// const cadastra = document.querySelector('#cadastra')
-// const inputNome = document.querySelector('#nome')
-// const inputPreco = document.querySelector('#preco')
-
-// cadastra.addEventListener('click', function(){
-//     Catalogo.adicionar(inputNome.value, inputPreco.value)
-// })
-
-
-Catalogo.adicionar('Vinho Chileno', '50', '5', 'vinho')
-Catalogo.adicionar('Vinho Americano', '30', '5', 'vinho')
-Catalogo.adicionar('Vinho Brasileiro', '40', '10', 'vinho')
-Catalogo.adicionar('Vinho Paraguaio', '60', '10', 'vinho')
+Catalogo.adicionar('Vinho Pergola', '50', '12', 'vinho')
+Catalogo.adicionar('Cachaça Matuta', '30', '15', 'cachaça')
+Catalogo.adicionar('Vodka Smirnoff ', '40', '10', 'vodka')
+Catalogo.adicionar('Cerveja Eisenbahn', '60', '50', 'cerveja')
 
 Catalogo.init()
 Catalogo.imprimir()
