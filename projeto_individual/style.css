@@ -41,8 +41,29 @@ main .conteiner {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-    
+    margin-bottom: 40px;
 }
+
+.remover {
+    display: flex;
+    justify-content: right;
+}
+
+.remover .btn-remover {
+    background-color: transparent;
+    border: none;
+    padding: 10px 5px;
+}
+
+.remover .btn-remover img {
+    width: 20px;
+    height: auto;
+}
+
+.remover .btn-remover img:hover{
+    filter: hue-rotate(120deg) saturate(100%);
+}
+
 
 .item {
     margin: auto;

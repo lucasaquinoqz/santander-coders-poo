@@ -17,7 +17,7 @@ class Catalogo {
                         <img src=${val.imagem} alt="imagem_${val.nome}">
                     </div>
                     <div class="remover">
-                        <button id="remover" onclick='Catalogo.remover(${val.id})'>Remover</button>
+                        <button id="remover" class="btn-remover" onclick='Catalogo.remover(${val.id})'><img src="src/x_106506.png" alt="img-remover"></button>
                     </div>
                 </div>
                 <div class="descricao-geral">
@@ -132,7 +132,7 @@ class Catalogo {
                         <img src=${produtos[index].imagem} alt="imagem_${produtos[index].nome}">
                     </div>
                     <div class="remover">
-                        <button id="remover" onclick='Catalogo.remover(${produtos[index].id})'>Remover</button>
+                        <button id="remover" class="btn-remover" onclick='Catalogo.remover(${produtos[index].id})'><img src="src/x_106506.png" alt="img-remover"></button>
                     </div>
                 </div>
                 <div class="descricao-geral">
