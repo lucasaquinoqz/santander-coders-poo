@@ -53,13 +53,32 @@ main .conteiner {
     transition: .5s;
 }
 
-.item:hover {
+/* .item:hover {
     scale: 1.05;
-}
+} */
 
 .item .img {
     background-color: #BEBEBE;
     width: 250px;
+    height: 200px;
+    position: relative;
+}
+
+.item .img .remover{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+.item .img .img-produto{
+    display: flex;
+    justify-content: center;
+}
+
+.item .img .img-produto img{
+    background-color: #BEBEBE;
+    width: 200px;
     height: 200px;
 }
 
