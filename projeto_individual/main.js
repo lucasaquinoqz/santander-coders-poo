@@ -130,6 +130,11 @@ class Catalogo {
         Catalogo.imprimir()
     }
 
+    static cancelaEdicao(index) {
+        Catalogo.limparCampos()
+        Catalogo.imprimir()
+    }
+
     static editar(indice) {
         let index = produtos.map(e => e.id).indexOf(indice)
         let item = document.querySelector(`#item${indice}`)
@@ -152,7 +157,8 @@ class Catalogo {
                         <div class="totalCaixas">Total de caixas: ${produtos[index].armazenamentoCaixa()}</div>
                     </div>
                     <div class="comprar">
-                        <button id="editar" onclick='Catalogo.finalizaEdicao(${index})'>Concluir</button>
+                        <button id="editarConcluir" onclick='Catalogo.finalizaEdicao(${index})'>Concluir</button>
+                        <button id="editarCancelar" onclick='Catalogo.cancelaEdicao(${index})'>Cancelar</button>
                     </div>
                 </div>
             </div>
