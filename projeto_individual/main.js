@@ -1,4 +1,72 @@
-produtos = []
+class Bebida {
+    static id = 1
+    constructor(nome, preco, quantidade, imagem) {
+        this.nome = nome
+        this.preco = preco
+        this.quantidade = quantidade
+        this.imagem = imagem
+    }
+    divisor = 12
+}
+
+class Vinho extends Bebida {
+    constructor(nome, preco, quantidade, imagem) {
+        super(nome, preco, quantidade, imagem)
+        this.id = Bebida.id++
+    }
+    divisor = 6
+}
+
+class Cachaca extends Bebida {
+    constructor(nome, preco, quantidade, imagem) {
+        super(nome, preco, quantidade, imagem)
+        this.id = Bebida.id++
+    }
+    divisor = 10
+}
+
+class Vodka extends Bebida {
+    constructor(nome, preco, quantidade, imagem) {
+        super(nome, preco, quantidade, imagem)
+        this.id = Bebida.id++
+    }
+    divisor = 8
+}
+
+class Cerveja extends Bebida {
+    constructor(nome, preco, quantidade, imagem) {
+        super(nome, preco, quantidade, imagem)
+        this.id = Bebida.id++
+    }
+    divisor = 24
+}
+
+Bebida.prototype.armazenamentoCaixa = function () {
+    let totalCaixas = this.quantidade / this.divisor
+    return Math.ceil(totalCaixas)
+}
+
+Vinho.prototype.armazenamentoCaixa = function () {
+    let totalCaixas = this.quantidade / this.divisor
+    return Math.ceil(totalCaixas)
+}
+
+Cachaca.prototype.armazenamentoCaixa = function () {
+    let totalCaixas = this.quantidade / this.divisor
+    return Math.ceil(totalCaixas)
+}
+
+Vodka.prototype.armazenamentoCaixa = function () {
+    let totalCaixas = this.quantidade / this.divisor
+    return Math.ceil(totalCaixas)
+}
+
+Cerveja.prototype.armazenamentoCaixa = function () {
+    let totalCaixas = this.quantidade / this.divisor
+    return Math.ceil(totalCaixas)
+}
+
+const produtos = []
 
 class Catalogo {
     #nome = document.querySelector('#nome')
@@ -34,7 +102,6 @@ class Catalogo {
             `
         }, "")
         document.querySelector('main .conteiner').innerHTML = lista
-
     }
 
     static init() {
@@ -130,7 +197,7 @@ class Catalogo {
         Catalogo.imprimir()
     }
 
-    static cancelaEdicao(index) {
+    static cancelaEdicao() {
         Catalogo.limparCampos()
         Catalogo.imprimir()
     }
@@ -158,75 +225,11 @@ class Catalogo {
                     </div>
                     <div class="comprar">
                         <button id="editarConcluir" onclick='Catalogo.finalizaEdicao(${index})'>Concluir</button>
-                        <button id="editarCancelar" onclick='Catalogo.cancelaEdicao(${index})'>Cancelar</button>
+                        <button id="editarCancelar" onclick='Catalogo.cancelaEdicao()'>Cancelar</button>
                     </div>
                 </div>
             </div>
         `
-    }
-}
-
-class Bebida {
-    static id = 1
-    constructor(nome, preco, quantidade, imagem) {
-        this.nome = nome
-        this.preco = preco
-        this.quantidade = quantidade
-        this.imagem = imagem
-    }
-
-    armazenamentoCaixa() {
-        let totalCaixas = this.quantidade / 12
-        return Math.ceil(totalCaixas)
-    }
-
-}
-
-class Vinho extends Bebida {
-    constructor(nome, preco, quantidade, imagem) {
-        super(nome, preco, quantidade, imagem)
-        this.id = Bebida.id++
-    }
-
-    armazenamentoCaixa() {
-        let totalCaixas = this.quantidade / 6
-        return Math.ceil(totalCaixas)
-    }
-}
-
-class Cachaca extends Bebida {
-    constructor(nome, preco, quantidade, imagem) {
-        super(nome, preco, quantidade, imagem)
-        this.id = Bebida.id++
-    }
-
-    armazenamentoCaixa() {
-        let totalCaixas = this.quantidade / 10
-        return Math.ceil(totalCaixas)
-    }
-}
-
-class Vodka extends Bebida {
-    constructor(nome, preco, quantidade, imagem) {
-        super(nome, preco, quantidade, imagem)
-        this.id = Bebida.id++
-    }
-
-    armazenamentoCaixa() {
-        let totalCaixas = this.quantidade / 8
-        return Math.ceil(totalCaixas)
-    }
-}
-
-class Cerveja extends Bebida {
-    constructor(nome, preco, quantidade, imagem) {
-        super(nome, preco, quantidade, imagem)
-        this.id = Bebida.id++
-    }
-
-    armazenamentoCaixa() {
-        let totalCaixas = this.quantidade / 24
-        return Math.ceil(totalCaixas)
     }
 }
 
