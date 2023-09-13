@@ -22,7 +22,7 @@ class Cachaca extends Bebida {
         super(nome, preco, quantidade, imagem)
         this.id = Bebida.id++
     }
-    divisor = 10
+    divisor = 8
 }
 
 class Vodka extends Bebida {
@@ -30,7 +30,7 @@ class Vodka extends Bebida {
         super(nome, preco, quantidade, imagem)
         this.id = Bebida.id++
     }
-    divisor = 8
+    divisor = 10
 }
 
 class Cerveja extends Bebida {
